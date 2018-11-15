@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "postgres": "postgres://postgres:casio111@localhost:5432/feathers_udemy",
+  "authentication": {
+    "secret": "1a505c70ab23972f15b752ea73d4d6d75de8684f6affd9612b0a16a45568c74b370f5ebd5be2fea8e77f4d638931e738ce329d4126cd688b286c806177a8ff58ad6d31b0c3ddbdface7d34884ef2c71993e339b75e6daf5df458a049a56b6d4a6b1833c3a1795612d670dceebe2d0950b6ad7039cd5b3e6b19c9a80d8274999c2c85bda015c0d07dc9a850b409bb757bddbbcaf020fb4cc3ef3ba14cfd4af4cc8ee9ae73c7f87a7cae6b35d713577c7eb8d45a83ecd47b5121b5556e517df4bac3ed15e220aa64c855e59fe15df87e226317534e5ad29da0441913a243fdd162342e5fcd1d27e97a976d51a5d809ee8b6c56e7c21d559bf24de6a110b6c100f1",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
+}
